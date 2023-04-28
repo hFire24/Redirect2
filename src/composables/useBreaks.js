@@ -61,8 +61,7 @@ export default function useBreaks() {
 
     function generateBreak() {
         try {
-            link.value = allBreaks.value[0].link;
-
+            link.value = '';
             if(allBreaks.value.length === 0) {
                 breakText.value = "You're still here? Then get back to whatever you should be doing!";
                 return;
