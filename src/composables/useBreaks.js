@@ -7,6 +7,7 @@ export default function useBreaks() {
     const passedBreaks = ref([]);
     const breakIndex = ref(0);
     const breakText = ref('');
+    const link = ref('');
 
     async function getBreaks() {
         try {
@@ -60,6 +61,8 @@ export default function useBreaks() {
 
     function generateBreak() {
         try {
+            link.value = allBreaks.value[0].link;
+
             if(allBreaks.value.length === 0) {
                 breakText.value = "You're still here? Then get back to whatever you should be doing!";
                 return;
@@ -71,12 +74,14 @@ export default function useBreaks() {
             if(allBreaks.value.length === 1) {
                 breakIndex.value = 0;
                 breakText.value = allBreaks.value[0].text;
+                link.value = allBreaks.value[0].link;
                 return;
             }
             let previousBreak = breakText.value;
             do {
                 breakIndex.value = Math.floor(Math.random() * allBreaks.value.length)
                 breakText.value = allBreaks.value[breakIndex.value].text;
+                link.value = allBreaks.value[breakIndex.value].link;
             } while(breakText.value === previousBreak);
         } catch(e) {
             console.log(e);
@@ -108,5 +113,5 @@ export default function useBreaks() {
             console.log(e);
         }
     }
-    return { allBreaks, breakText, passedBreaks, getBreaks, getSmallBreaks, getBreaksAdmin, disableBreak, generateBreak, complete, pass }
+    return { allBreaks, breakText, passedBreaks, link, getBreaks, getSmallBreaks, getBreaksAdmin, disableBreak, generateBreak, complete, pass }
 }
