@@ -17,6 +17,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-export const dbQuotesRef = collection(db, "quotes");
+export const dbMessagesRef = collection(db, "messages");
 export const dbBreaksRef = collection(db, "breaks");
 export const dbUsersRef = collection(db, "users");
