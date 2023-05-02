@@ -38,7 +38,7 @@
 </script>
 
 <template>
-  <h1>{{ messageText }}</h1>
+  <h1 v-html="messageText"></h1>
   <div v-if="redirectedFromWebsite" class="space">You tried to access {{ website }} {{ numTimes }} time<span v-if="numTimes !== 1">s</span> today.</div>
   <div>{{ question }}<br><button class="green" @click="acceptSomething">Yes</button><button class="red" @click="rejectSomething" :disabled="rejectId === 11">No</button></div>
 </template>

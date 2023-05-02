@@ -79,11 +79,3 @@
   <h1 :class="{ stress: isEpic }">{{ genre }}</h1>
   <div>{{ category }}</div>
 </template>
-
-<style>
-  .stress {
-    color:red;
-    font-weight:bold;
-    font-style:italic;
-  }
-</style>
