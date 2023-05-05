@@ -24,7 +24,7 @@ async function add() {
             alert("You can't do this")
             return;
         }
-        if(newBreak.value.text.trim() === "") {
+        if(newBreak.value.text === "") {
             alert("You can't submit a break without text.")
             return;
         }
@@ -47,11 +47,11 @@ async function add() {
         <form v-show="showNewBreak">
             <div class="form_group">
                 <label for="text">Break Text</label>&nbsp;
-                <input type="text" id="text" v-model="newBreak.text">
+                <input type="text" id="text" v-model.trim="newBreak.text">
             </div>
             <div class="form_group">
                 <label for="link">URL (optional)</label>&nbsp;
-                <input type="link" id="link" v-model="newBreak.link">
+                <input type="link" id="link" v-model.trim="newBreak.link">
             </div>
             <div class="form_group">
                 <label for="category">Category</label>&nbsp;

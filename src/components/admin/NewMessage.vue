@@ -18,7 +18,7 @@ async function add() {
             alert("You can't do this")
             return;
         }
-        if(newMessage.value.text.trim() === "") {
+        if(newMessage.value.text === "") {
             alert("You can't submit a message without text.")
             return;
         }
@@ -41,7 +41,7 @@ async function add() {
         <form v-show="showNewMessage">
             <div class="form_group">
                 <label for="text">Message Text</label>&nbsp;
-                <input type="text" id="text" v-model="newMessage.text">
+                <input type="text" id="text" v-model.trim="newMessage.text">
             </div>
             <div class="form_group">
                 <button @click.prevent="add" class="green">Add</button>

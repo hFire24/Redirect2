@@ -31,6 +31,6 @@
 
 <template>
   <h1>{{ message }}</h1>
-  <div v-if="!submitted"><input v-model="task" @keyup.enter="submit"> <button @click="submit" class="green">Submit</button></div>
+  <div v-if="!submitted"><input v-model.trim="task" @keyup.enter="submit"> <button @click="submit" class="green">Submit</button></div>
   <div v-else><button @click="done" class="green">Done</button></div>
 </template>
